@@ -12,7 +12,7 @@ d = 10
 xMin, xMax = -100, 100
 vMin, vMax = -0.2*(xMax - xMin), 0.2*(xMax - xMin)
 MaxIter = 3000
-ps = 10
+ps = 100
 c1 = 2
 c2 = 2
 w = 0.9 - ((0.9 - 0.4)/MaxIter)*np.linspace(0,MaxIter,MaxIter)
@@ -64,6 +64,7 @@ def Optimization():
                         if self.pbest_cost[i] < self.gbest_cost:
                             self.gbest = self.pbest[i]
                             self.gbest_cost = self.pbest_cost[i]
+                print("iter:", it, "best solution:", self.gbest_cost)
                 self.BestCost[it] = self.gbest_cost
                 
         def Plot(self):
